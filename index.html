@@ -12,8 +12,27 @@
       <input type="search" placeholder="enter a city" />
       <button type="submit">Search</button>
     </form>
-    <div class="data">
+    <div id="error">
       <p></p>
+    </div>
+    <div id="data">
+      <div id="city-info">
+        <p id="city"></p>
+        <p id="country"></p>
+        <p id="latitude"></p>
+        <p id="longitude"></p>
+      </div>
+      <div id="weather-info">
+        <p id="celsius"></p>
+        <p id="fahrenheit"></p>
+        <p id="wind-in-mph"></p>
+        <p id="wind-in-kph"></p>
+        <p id="wind-direction"></p>
+      </div>
+      <div id="current-condition">
+        <p id="condition-text"></p>
+        <img id="condition-icon" />
+      </div>
     </div>
     <script src="./script.js"></script>
   </body>
