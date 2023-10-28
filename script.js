@@ -1,52 +1,59 @@
 const API_KEY = "98adb2a1ae6f44b6a4c183200232810";
+const dataDiv = document.getElementById("data-container");
 
 const clearData = () => {
+  const error = document.querySelector("#error-container > p");
+  error.textContent = "";
+
   const img = document.querySelector("img");
   img.src = "";
 
-  const allP = document.querySelectorAll("p");
-  for (const p of allP) {
+  const allSpan = document.querySelectorAll("p > span");
+  for (const p of allSpan) {
     p.textContent = "";
   }
 };
 
 const displayData = (data) => {
-  const city = document.getElementById("city");
-  city.textContent = `City: ${data.location.name}`;
+  dataDiv.hidden = false;
 
-  const country = document.getElementById("country");
-  country.textContent = `Country: ${data.location.country}`;
+  const city = document.querySelector("#city > span");
+  city.textContent = `${data.location.name}`;
 
-  const latitude = document.getElementById("latitude");
-  latitude.textContent = `Latitude: ${data.location.lat}`;
+  const country = document.querySelector("#country > span");
+  country.textContent = `${data.location.country}`;
 
-  const longitude = document.getElementById("longitude");
-  longitude.textContent = `Longitude: ${data.location.lon}`;
+  const latitude = document.querySelector("#latitude > span");
+  latitude.textContent = `${data.location.lat}`;
 
-  const celsius = document.getElementById("celsius");
-  celsius.textContent = `Temperature in Celsius: ${data.current.temp_c}`;
+  const longitude = document.querySelector("#longitude > span");
+  longitude.textContent = `${data.location.lon}`;
 
-  const fahrenheit = document.getElementById("fahrenheit");
-  fahrenheit.textContent = `Temperature in Fahrenheit: ${data.current.temp_f}`;
+  const celsius = document.querySelector("#celsius > span");
+  celsius.textContent = `${data.current.temp_c}`;
 
-  const windMPH = document.getElementById("wind-in-mph");
-  windMPH.textContent = `Wind in mph: ${data.current.wind_mph} mph`;
+  const fahrenheit = document.querySelector("#fahrenheit > span");
+  fahrenheit.textContent = `${data.current.temp_f}`;
 
-  const windKPH = document.getElementById("wind-in-kph");
-  windKPH.textContent = `Wind in mph: ${data.current.wind_kph} kph`;
+  const windMPH = document.querySelector("#wind-in-mph > span");
+  windMPH.textContent = `${data.current.wind_mph} mph`;
 
-  const windDirection = document.getElementById("wind-direction");
-  windDirection.textContent = `Wind direction: ${data.current.wind_dir}`;
+  const windKPH = document.querySelector("#wind-in-kph > span");
+  windKPH.textContent = `${data.current.wind_kph} kph`;
 
-  const conditionText = document.getElementById("condition-text");
-  conditionText.textContent = `Current condition: ${data.current.condition.text}`;
+  const windDirection = document.querySelector("#wind-direction > span");
+  windDirection.textContent = `${data.current.wind_dir}`;
+
+  const conditionText = document.querySelector("#condition-text > span");
+  conditionText.textContent = `${data.current.condition.text}`;
 
   const conditionIcon = document.getElementById("condition-icon");
   conditionIcon.src = data.current.condition.icon;
 };
 
 const displayError = (error) => {
-  const dataP = document.querySelector("#error > p");
+  dataDiv.hidden = true;
+  const dataP = document.querySelector("#error-container > p");
 
   if (error.message.includes("Parameter q")) {
     error.message = "Please enter a city before searching.";

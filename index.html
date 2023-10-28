@@ -7,30 +7,32 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Weather</h1>
+    <h1>Search for a city to see the current weather</h1>
     <form action="#">
       <input type="search" placeholder="enter a city" />
       <button type="submit">Search</button>
     </form>
-    <div id="error">
+    <div id="error-container">
       <p></p>
     </div>
-    <div id="data">
+    <div id="data-container">
       <div id="city-info">
-        <p id="city"></p>
-        <p id="country"></p>
-        <p id="latitude"></p>
-        <p id="longitude"></p>
+        <p id="city">City:<span></span></p>
+        <p id="country">Country:<span></span></p>
+        <p id="latitude">Latitude:<span></span></p>
+        <p id="longitude">Longitude:<span></span></p>
       </div>
+      <br />
       <div id="weather-info">
-        <p id="celsius"></p>
-        <p id="fahrenheit"></p>
-        <p id="wind-in-mph"></p>
-        <p id="wind-in-kph"></p>
-        <p id="wind-direction"></p>
+        <p id="celsius">Temperature in Celsius:<span></span></p>
+        <p id="fahrenheit">Temperature in Fahrenheit:<span></span></p>
+        <p id="wind-in-mph">Wind in mph:<span></span></p>
+        <p id="wind-in-kph">Wind in kph:<span></span></p>
+        <p id="wind-direction">Wind direction:<span></span></p>
       </div>
+      <br />
       <div id="current-condition">
-        <p id="condition-text"></p>
+        <p id="condition-text">Current condition:<span></span></p>
         <img id="condition-icon" />
       </div>
     </div>
