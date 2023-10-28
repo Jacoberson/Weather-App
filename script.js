@@ -68,7 +68,7 @@ const getWeatherData = async (query) => {
 
   try {
     response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${query}&aqi=no`,
+      `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${query}&aqi=no`,
       { mode: "cors" }
     );
     data = await response.json();
